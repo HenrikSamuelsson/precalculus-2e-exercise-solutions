@@ -1,2 +1,6 @@
-#VS Code editor
+# VS Code editor
 .vscode/settings.json
+
+# LaTeX build artifacts
+/build/
+
