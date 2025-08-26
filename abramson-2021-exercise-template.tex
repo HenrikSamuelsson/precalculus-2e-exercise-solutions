@@ -19,7 +19,7 @@
 \usepackage{cmbright}
 \renewcommand{\familydefault}{\sfdefault}
 
-% --- Unicode punctuation mappings (avoid missing-character warnings) ---
+% --- Unicode punctuation mappings ---
 \usepackage{newunicodechar}
 \newunicodechar{—}{---} % em dash
 \newunicodechar{–}{--}  % en dash
@@ -30,20 +30,19 @@
 \newunicodechar{‐}{-}   % hyphen
 \newunicodechar{‑}{-}   % non-breaking hyphen
 
-% --- Footer with OpenStax attribution on every page ---
+% --- Footer: attribution + lightweight reference on EVERY page ---
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{} % clear header/footer
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-\fancyfoot[C]{\footnotesize Access for free at openstax.org.}
+\fancyfoot[C]{\footnotesize \parbox{0.9\textwidth}{\centering This exercise is from the book \textit{Precalculus 2e} (OpenStax, 2021). Access for free at openstax.org.}}
 \fancyfoot[R]{\footnotesize \thepage}
-% Ensure 'plain' pages (e.g., first page) also get the footer
 \fancypagestyle{plain}{%
   \fancyhf{}
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
-  \fancyfoot[C]{\footnotesize This exercise is from the book Precalculus 2e, (OpenStax 2021). Access for free at openstax.org.}
+  \fancyfoot[C]{\footnotesize \parbox{0.9\textwidth}{\centering This exercise is from the book \textit{Precalculus 2e} (OpenStax, 2021). Access for free at openstax.org.}}
   \fancyfoot[R]{\footnotesize \thepage}
 }
 
@@ -51,11 +50,6 @@
 \newenvironment{problem}[1]{\section*{Problem #1}}{}
 \newenvironment{solution}{\section*{Solution}}{}
 \newenvironment{answer}{\section*{Answer}}{}
-
-% --- License note (informational, not a substitute for footer requirement) ---
-% If any problem statement is copied verbatim from OpenStax,
-% include this footer (already enforced above) and keep proper attribution.
-% This document adds the attribution "Access for free at openstax.org." to every page.
 
 \begin{document}
 
