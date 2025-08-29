@@ -50,11 +50,6 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-% header
-\renewcommand{\headrulewidth}{0.2pt} % subtle separator; set to 0pt to remove
-\fancyhead[L]{\scriptsize \exBook}
-\fancyhead[C]{\scriptsize \exHeaderText}
-\fancyhead[R]{\scriptsize Abramson (2021)}
 % footer (two lines, no page numbers)
 \renewcommand{\footrulewidth}{0pt}
 \fancyfoot[C]{\scriptsize \parbox{0.9\textwidth}{\centering
@@ -73,7 +68,7 @@ Access for free at openstax.org.}}
 }
 
 % --- Simple environments ---
-\newenvironment{problem}[1]{\section*{Problem #1}}{}
+\newenvironment{instruction}[1]{\section*{Instruction}}{}
 \newenvironment{solution}{\section*{Solution}}{}
 \newenvironment{answer}{\section*{Answer}}{}
 
@@ -85,9 +80,9 @@ Access for free at openstax.org.}}
     {\large \exTitle}
 \end{center}
 
-\begin{problem}{\exNumber\exVariant}
+\begin{instruction}
 <Write the problem statement here. Include any diagrams or givens.>
-\end{problem}
+\end{instruction}
 
 \begin{solution}
 <Show clear, step-by-step work here. Use displayed math as needed, e.g.>
