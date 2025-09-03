@@ -1,0 +1,32 @@
+% Minimal sample solution (style-separated)
+% Compile with: tectonic solution-openstax-min.tex
+\documentclass[a4paper,11pt]{article}
+\usepackage{exercise-style-cmbright}
+
+% Metadata (adjust per exercise)
+\renewcommand{\BookTitle}{Precalculus 2e (OpenStax, 2021)}
+\renewcommand{\ExerciseSource}{Section}
+\renewcommand{\SectionLabel}{1.1}
+\renewcommand{\ExerciseNumber}{5}
+\renewcommand{\AuthorName}{Henrik Samuelsson}
+\renewcommand{\DateStamp}{2025-09-03}
+\renewcommand{\ProblemTitle}{Exercise Solution}
+
+\begin{document}
+\maketitle
+
+\begin{problem}
+State whether the relation $y = \sqrt{x-3}$ defines $y$ as a function of $x$.
+\end{problem}
+
+\begin{solution}
+For $x \ge 3$, $\sqrt{x-3}$ is defined and returns the nonnegative value only.
+Thus each valid $x$ maps to exactly one $y$, so it is a function on $[3,\infty)$.
+\end{solution}
+
+\begin{answer}
+Yes, it is a function for $x \ge 3$.
+\finalanswer{Function on $[3,\infty)$}
+\end{answer}
+
+\end{document}
