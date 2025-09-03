@@ -1,0 +1,130 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{exercise-style-cmbright}[2025/09/03 v1.0 Exercise solution style (cmbright)]
+
+% ---------- Base packages ----------
+\RequirePackage[a4paper,margin=1in]{geometry}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{cmbright}
+\RequirePackage{microtype}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{enumitem}
+\RequirePackage{fancyhdr}
+\RequirePackage{lastpage}
+\RequirePackage{hyperref}
+\RequirePackage{xcolor}
+\RequirePackage{titling}
+\RequirePackage{etoolbox}
+
+% ---------- Metadata (semantic) ----------
+% You set these in your content file; sensible defaults provided.
+\newcommand{\BookTitle}{Precalculus 2e (OpenStax, 2021)}
+\newcommand{\ExerciseSource}{Section} % Section | ChapterReview
+\newcommand{\SectionLabel}{?}         % e.g., 1.1
+\newcommand{\ChapterLabel}{?}         % e.g., 1
+\newcommand{\ExerciseNumber}{?}       % e.g., 5
+\newcommand{\ProblemTitle}{Exercise}  % Can be overridden per document
+\newcommand{\AuthorName}{}            % Optional
+\newcommand{\DateStamp}{\today}
+
+% ---------- Header / footer ----------
+\pagestyle{fancy}
+\fancyhf{} % clear all
+
+% Left header shows source → Section X.Y or Chapter X Review
+\newcommand{\headerleft}{%
+  \ifstrequal{\ExerciseSource}{ChapterReview}
+    {Chapter \ChapterLabel\ Review}
+    {Section \SectionLabel}%
+}
+
+% Center header shows book title
+\newcommand{\headercenter}{\BookTitle}
+
+% Right header shows exercise number
+\newcommand{\headerright}{Ex.\ \ExerciseNumber}
+
+\lhead{\small\headerleft}
+\chead{\small\headercenter}
+\rhead{\small\headerright}
+
+% Footer: optional reference note + page X of Y
+
+% Toggle to hide page numbers if desired
+\newif\ifhidepagenumbers
+\hidepagenumbersfalse
+\newcommand{\HidePageNumbers}{\hidepagenumberstrue}
+\AtBeginDocument{%
+  \ifhidepagenumbers
+  \fi
+}
+
+% ---------- Title block (semantic) ----------
+\pretitle{\vspace*{-1.5em}\begin{center}\Large\bfseries}
+\posttitle{\end{center}\vspace{0.5em}}
+\preauthor{\begin{center}\small}
+\postauthor{\end{center}}
+\predate{\begin{center}\small}
+\postdate{\end{center}\vspace{1em}}
+
+\renewcommand{\maketitle}{%
+  \begin{center}
+    {\Large\bfseries \ProblemTitle}\par
+    \vspace{0.25em}
+    {\small \ifstrequal{\ExerciseSource}{ChapterReview}
+      {Chapter \ChapterLabel\ Review, Exercise \ExerciseNumber}
+      {Section \SectionLabel, Exercise \ExerciseNumber}}\\[0.25em]
+    {\small \BookTitle}\par
+    \ifx\AuthorName\empty\else{\small \AuthorName\par}\fi
+    {\small \DateStamp}
+  \end{center}
+  \vspace{0.75em}\hrule\vspace{1em}
+}
+
+% ---------- Semantic environments ----------
+% All visual styling lives here; content files use only these environments/commands.
+
+\newenvironment{problem}{%
+  \par\noindent\textbf{Problem}\par\vspace{0.25em}\noindent
+}{\par\vspace{0.75em}}
+
+\newenvironment{solution}{%
+  \par\noindent\textbf{Solution}\par\vspace{0.25em}\noindent
+}{\par\vspace{0.75em}}
+
+\newenvironment{answer}{%
+  \par\vspace{0.25em}\noindent\textbf{Answer}\par\vspace{0.25em}\noindent
+}{\par\vspace{0.75em}}
+
+% A handy box for final numeric answers (optional)
+\newcommand{\finalanswer}[1]{%
+  \par\vspace{0.5em}\noindent
+  \fbox{\rule{0pt}{1.2em}\hspace{0.8em}\textbf{#1}\hspace{0.8em}}%
+  \par\vspace{0.75em}
+}
+
+% Math display helpers
+\newcommand{\ds}{\displaystyle}
+
+% ---------- Hyperref setup ----------
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  citecolor=blue,
+  pdftitle={Exercise Solution},
+  pdfauthor={\AuthorName},
+  pdfsubject={Mathematics Exercise Solution}
+}
+
+% ---------- List spacing ----------
+\setlist{itemsep=0.25em, topsep=0.25em}
+
+% ---------- End of package ----------
+
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyfoot[C]{\small This exercise is from the book Precalculus 2e (OpenStax, 2021). Access for free at openstax.org.}
+
+% ---------- Footer with license attribution ----------
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyfoot[C]{\small This exercise is from the book Precalculus 2e (OpenStax, 2021). Access for free at openstax.org.}
