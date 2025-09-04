@@ -1,6 +1,28 @@
 # VS Code editor
 .vscode/settings.json
 
-# LaTeX build artifacts
+# Build folder
 /build/
 
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex
+*.bbl
+*.blg
+*.xdv
+*.nav
+*.snm
+*.vrb
+*-blx.bib
+*.run.xml
+
+# Generated PDFs
+*.pdf
