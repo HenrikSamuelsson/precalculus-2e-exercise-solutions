@@ -16,6 +16,10 @@
 \RequirePackage{titling}
 \RequirePackage{etoolbox}
 
+% ---------- Paragraph spacing ----------
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+
 % ---------- Metadata (semantic) ----------
 % You set these in your content file; sensible defaults provided.
 \newcommand{\BookTitle}{Precalculus 2e (OpenStax, 2021)}
@@ -25,7 +29,6 @@
 \newcommand{\ExerciseNumber}{?}       % e.g., 5
 \newcommand{\ProblemTitle}{Exercise}  % Can be overridden per document
 \newcommand{\AuthorName}{}            % Optional
-\newcommand{\DateStamp}{\today}
 
 % ---------- Header / footer ----------
 \pagestyle{fancy}
@@ -64,8 +67,6 @@
 \posttitle{\end{center}\vspace{0.5em}}
 \preauthor{\begin{center}\small}
 \postauthor{\end{center}}
-\predate{\begin{center}\small}
-\postdate{\end{center}\vspace{1em}}
 
 \renewcommand{\maketitle}{%
   \begin{center}
@@ -76,7 +77,6 @@
       {Section \SectionLabel, Exercise \ExerciseNumber}}\\[0.25em]
     {\small \BookTitle}\par
     \ifx\AuthorName\empty\else{\small \AuthorName\par}\fi
-    {\small \DateStamp}
   \end{center}
   \vspace{0.75em}\hrule\vspace{1em}
 }
@@ -85,15 +85,15 @@
 % All visual styling lives here; content files use only these environments/commands.
 
 \newenvironment{problem}{%
-  \par\noindent\textbf{Problem}\par\vspace{0.25em}\noindent
+  \par\noindent\textbf{Problem}\par\vspace{0.25em}\noindent\ignorespaces
 }{\par\vspace{0.75em}}
 
 \newenvironment{solution}{%
-  \par\noindent\textbf{Solution}\par\vspace{0.25em}\noindent
+  \par\noindent\textbf{Solution}\par\vspace{0.25em}\noindent\ignorespaces
 }{\par\vspace{0.75em}}
 
 \newenvironment{answer}{%
-  \par\vspace{0.25em}\noindent\textbf{Answer}\par\vspace{0.25em}\noindent
+  \par\vspace{0.25em}\noindent\textbf{Answer}\par\vspace{0.25em}\noindent\ignorespaces
 }{\par\vspace{0.75em}}
 
 % A handy box for final numeric answers (optional)
